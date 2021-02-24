@@ -35,5 +35,3 @@ int main()
     printf("Minimum number is : %d\n", iRetMin);
     return 0;
 }
-
-
