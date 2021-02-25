@@ -4,7 +4,7 @@
 // Function name: Maximum
 // Input: Integer, Integer
 // Output: Integer
-// Description: It is used to find out the largest number
+// Description: It is used to find out the largest and smallest number
 // Date: 2/23/2021
 // Author: Omkar Maltesh Kulkarni
 //
