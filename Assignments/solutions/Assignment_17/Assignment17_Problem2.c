@@ -1,34 +1,28 @@
 /*
-Accept N numbers from user and return diff between sum 
-of even elements and sum of odd elements. 
+Accept N numbers from user and display all such elements which are 
+divisible by 5. 
 Input : N : 6 
  Elements : 85 66 3 80 93 88 
-Output : 53 (234 - 181)
+Output : 85 80 
 */
-
 
 #include <stdio.h>
 #include <stdlib.h>
 
-int Difference(int Arr[], int iSize)
+void Display(int Arr[], int iSize)
 {
-    int iEvenSum = 0, iOddSum =0, i = 0;
+    int i = 0;
     if((Arr == NULL) || (iSize <= 0))
     {
-        return -1;
+        return;
     }
     for ( i = 0; i < iSize; i++)
     {
-        if(Arr[i] %2 == 0)
+        if(Arr[i] %5 == 0)
         {
-            iEvenSum = Arr[i] + iEvenSum;
-        }
-        else
-        {
-            iOddSum = Arr[i] + iOddSum;
+            printf("%d\t",Arr[i]);
         }
     }
-    return iEvenSum - iOddSum;
 }
 
 int main()
@@ -51,8 +45,8 @@ int main()
         scanf("%d", &arr[i]);
     }
 
-    iRet = Difference(arr, iLength);
-    printf("Difference between sum of even and odd nos = %d",iRet );
+    Display(arr, iLength);
+    
     free(arr);
 
     return 0;

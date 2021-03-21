@@ -1,34 +1,31 @@
 /*
-Accept N numbers from user and return diff between sum 
-of even elements and sum of odd elements. 
+Accept N numbers from user and return frequency of 11 form it. 
 Input : N : 6 
- Elements : 85 66 3 80 93 88 
-Output : 53 (234 - 181)
+ Elements : 85 66 3 15 93 88 
+Output : 0 
+Input : N : 6 
+ Elements : 85 11 3 15 11 111 
+Output : 2
 */
-
 
 #include <stdio.h>
 #include <stdlib.h>
 
-int Difference(int Arr[], int iSize)
+int CountOf11(int Arr[], int iSize)
 {
-    int iEvenSum = 0, iOddSum =0, i = 0;
+    int iCount = 0, i = 0;
     if((Arr == NULL) || (iSize <= 0))
     {
         return -1;
     }
     for ( i = 0; i < iSize; i++)
     {
-        if(Arr[i] %2 == 0)
+        if(Arr[i] == 11)
         {
-            iEvenSum = Arr[i] + iEvenSum;
-        }
-        else
-        {
-            iOddSum = Arr[i] + iOddSum;
+            iCount++;
         }
     }
-    return iEvenSum - iOddSum;
+    return iCount;
 }
 
 int main()
@@ -51,8 +48,8 @@ int main()
         scanf("%d", &arr[i]);
     }
 
-    iRet = Difference(arr, iLength);
-    printf("Difference between sum of even and odd nos = %d",iRet );
+    iRet = CountOf11(arr, iLength);
+    printf("Count of 11s in array = %d",iRet );
     free(arr);
 
     return 0;

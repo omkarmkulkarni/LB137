@@ -1,18 +1,16 @@
 /*
-Accept N numbers from user and return diff between sum 
-of even elements and sum of odd elements. 
+Accept N numbers from user and return frequency of even numbers. 
 Input : N : 6 
  Elements : 85 66 3 80 93 88 
-Output : 53 (234 - 181)
+Output : 3 
 */
-
 
 #include <stdio.h>
 #include <stdlib.h>
 
-int Difference(int Arr[], int iSize)
+int CountOfEvenNos(int Arr[], int iSize)
 {
-    int iEvenSum = 0, iOddSum =0, i = 0;
+    int iCount = 0, i = 0;
     if((Arr == NULL) || (iSize <= 0))
     {
         return -1;
@@ -21,14 +19,10 @@ int Difference(int Arr[], int iSize)
     {
         if(Arr[i] %2 == 0)
         {
-            iEvenSum = Arr[i] + iEvenSum;
-        }
-        else
-        {
-            iOddSum = Arr[i] + iOddSum;
+            iCount++;
         }
     }
-    return iEvenSum - iOddSum;
+    return iCount;
 }
 
 int main()
@@ -51,8 +45,8 @@ int main()
         scanf("%d", &arr[i]);
     }
 
-    iRet = Difference(arr, iLength);
-    printf("Difference between sum of even and odd nos = %d",iRet );
+    iRet = CountOfEvenNos(arr, iLength);
+    printf("Count of even nos = %d",iRet );
     free(arr);
 
     return 0;
